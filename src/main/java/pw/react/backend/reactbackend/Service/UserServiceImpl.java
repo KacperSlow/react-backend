@@ -7,15 +7,13 @@ import pw.react.backend.reactbackend.Entity.User;
 import pw.react.backend.reactbackend.Repository.UserRepository;
 @Service
 public class UserServiceImpl implements UserService {
-
     @Autowired
     private UserRepository repository;
     @Override
     public User CheckUser(String login) {
-        User user;
-        user = repository.findByLogin(login);
-            if (user != null )
-                throw new ResourceNotFoundException(String.format("User with login [%s] is already created.", user.getLogin()));
+        User user = repository.findByLogin(login);
+        if (user != null )
+            throw new ResourceNotFoundException(String.format("User with login [%s] is already created.", user.getLogin()));
         return user;
     }
 }
