@@ -4,23 +4,23 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "customers")
-public class Customer implements Serializable {
+@Table(name = "users")
+public class User implements Serializable {
     private static final long serialVersionUID = -2343243243242432341L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(name = "indexnumber")
-    private  String indexNumber;
+    @Column(name = "Login")
+    private  String login;
     @Column(name = "firstname")
     private String firstName;
     @Column(name = "lastname")
     private String lastName;
     @Column(name = "active")
     private String active;
-    public Customer(){}
-    public Customer(String indexNumber,String firstName, String lastName, String Active) {
-        this.indexNumber=indexNumber;
+    public User(){}
+    public User(String login, String firstName, String lastName, String Active) {
+        this.login=login;
         this.firstName=firstName;
         this.lastName=lastName;
         this.active = Active;
@@ -37,11 +37,11 @@ public class Customer implements Serializable {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    public String getIndexNumber() {
-        return indexNumber;
+    public String getLogin() {
+        return login;
     }
-    public void setIndexNumber(String indexNumber) {
-        this.indexNumber = indexNumber;
+    public void setLogin(String login) {
+        this.login = login;
     }
     public String getActive() {
         return active;
