@@ -72,7 +72,7 @@ public class UserController {
         if (user == null) {
             response = respon;
             response.setStatus(404);
-            return (T) (String)"User with login: [%s] does not exist";
+            return (T) (String)"User with login does not exist";
         }
         return (T) user;
     }
